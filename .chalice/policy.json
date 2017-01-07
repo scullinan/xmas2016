@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "dynamodb:*"
+      ],
+      "Resource": [
+        "arn:aws:dynamodb:eu-west-1:*:table/ask_count",
+        "arn:aws:dynamodb:eu-west-1:*:table/good_list",
+        "arn:aws:dynamodb:eu-west-1:*:table/naughty_list",
+        "arn:aws:dynamodb:eu-west-1:*:table/present"
+      ],
+      "Effect": "Allow"
+    }
+  ]
+}
